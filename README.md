@@ -1,5 +1,4 @@
 
-<div align="center">
 
   <p>
     Tên đề tài: Xây dựng phần mềm mô phỏng giải thuật thay thế trang OPT (Optimal Page Replacement) MHP: 012012500103-HĐH 
