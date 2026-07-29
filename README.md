@@ -1,74 +1,84 @@
 
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Optimal-Page-Replacement-Algorithm</h1>
-  
   <p>
     Tên đề tài: Xây dựng phần mềm mô phỏng giải thuật thay thế trang OPT (Optimal Page Replacement) MHP: 012012500103-HĐH 
   </p>
   
   
-<!-- Badges -->
-<p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/awesome-readme-template" alt="last update" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/Louis3797/awesome-readme-template.svg" alt="license" />
-  </a>
-</p>
-   
-<h4>
-    <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
-  <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template">Documentation</a>
-  <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Report Bug</a>
-  <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Request Feature</a>
-  </h4>
-</div>
-
-<br />
 
 <!-- Table of Contents -->
 # :notebook_with_decorative_cover: Table of Contents
+1.Lý thuyết:Thuật toán OPT không hoạt động độc lập, mà dựa trên cơ chế quản lý bộ nhớ phân trang. Nếu trong báo cáo chỉ giải thích OPT mà không giải thích các khái niệm nền tảng thì người đọc sẽ khó hiểu. 
+- Khái niệm quản lý bộ nhớ
+- Page
+- Frame
+- Page Fault
+- Thuật toán OPT 
+2.Thuật Toán
+- Mô tả nguyên lý hoạt động: Giải thích bằng lời thuật toán làm gì và hoạt động theo trình tự nào. 
+ 	- Lưu đồ: Biểu diễn bằng sơ đồ các bước xử lý. 
+- Giả mã (Pseudocode): Viết thuật toán theo dạng gần với code nhưng không phụ thuộc ngôn ngữ lập trình. 
+3.So sánh với FIFO 	
+- So sánh nguyên lý
+- Ưu điểm, nhược điểm
+- Độ phức tạp và kết quả thực nghiệm giữa OPT và FIFO 
+4.Code giải thuật
+Trình bày mã nguồn của chương trình mô phỏng OPT 
+5.Kết quả 
+	Minh họa kết quả chạy chương trình, nhận xét và đánh giá
 
-- [Main Program (main.py)](#star2-about-the-project)
-  * [Screenshots](#camera-screenshots)
-  * [Tech Stack](#space_invader-tech-stack)
-  * [Features](#dart-features)
-  * [Color Reference](#art-color-reference)
-  * [Environment Variables](#key-environment-variables)
-- [Getting Started](#toolbox-getting-started)
-  * [Prerequisites](#bangbang-prerequisites)
-  * [Installation](#gear-installation)
-  * [Running Tests](#test_tube-running-tests)
-  * [Run Locally](#running-run-locally)
-  * [Deployment](#triangular_flag_on_post-deployment)
-- [Usage](#eyes-usage)
-- [Roadmap](#compass-roadmap)
-- [Contributing](#wave-contributing)
-  * [Code of Conduct](#scroll-code-of-conduct)
-- [FAQ](#grey_question-faq)
-- [License](#warning-license)
-- [Contact](#handshake-contact)
-- [Acknowledgements](#gem-acknowledgements)
 
-  
+
+Thành viên 1: Main Program (main.py) 
+	Khởi động chương trình, liên kết các module, quản lý luồng chương trình. 
+- Khởi tạo chương trình.
+- Import các module.
+- Điều khiển luồng thực thi.
+- Kết nối giao diện với các chức năng. 
+Thành viên 2: Giao diện chính (gui.py )
+	Thiết kế cửa sổ, bố cục giao diện, các Label, Frame và Menu. 
+- Thiết kế cửa sổ chính.
+- Tạo Label, Entry, Button, Frame.
+- Bố trí giao diện người dùng. 
+Thành viên 3: Điều khiển giao diện (controller.py )
+	Xử lý sự kiện các nút (Run, Reset, Exit), kết nối GUI với thuật toán. 
+- Xử lý sự kiện các nút Run, Reset, Exit.
+- Nhận dữ liệu từ GUI.
+- Gọi thuật toán và trả kết quả về giao diện. 
+Thành viên 4: Thuật toán OPT (opt_algorithm.py )
+	Cài đặt thuật toán OPT, trả về trạng thái Frame từng bước và kết quả. 
+- Cài đặt thuật toán OPT.
+- Kiểm tra Hit/Fault.
+- Chọn trang thay thế tối ưu.
+- Trả trạng thái Frame sau mỗi bước. 
+Thành viên 5: Kiểm tra dữ liệu (input_validation.py )
+	Kiểm tra Frame, Reference String, xử lý dữ liệu không hợp lệ. 
+- Kiểm tra số Frame hợp lệ.
+- Kiểm tra Reference String.
+- Thông báo lỗi khi nhập sai.
+- Chuẩn hóa dữ liệu đầu vào. 
+Thành viên 6: Hiển thị kết quả (result_table.py )
+	Hiển thị bảng mô phỏng từng bước (Frame, Hit/Fault, trang thay thế).
+- Hiển thị bảng mô phỏng từng bước.
+- Hiển thị Frame sau mỗi lần truy cập.
+- Hiển thị Hit/Fault và trang bị thay thế.  
+Thành viên 7: Thống kê (statistics.py)
+	Tính Page Fault, Hit, Hit Rate, Fault Rate và hiển thị thống kê. 
+- Tính số Page Fault.
+- Tính số Hit.
+- Tính Hit Rate, Fault Rate.
+- Hiển thị thống kê cuối chương trình. 
+
+Thành viên 8: Kiểm thử & tích hợp (test.py, utils.py )
+	Viết dữ liệu kiểm thử, hỗ trợ hàm dùng chung, kiểm tra và ghép chương trình. 
+
+- Viết dữ liệu kiểm thử.
+- Tạo các hàm dùng chung.
+- Ghép các module.
+- Kiểm tra lỗi toàn chương trình.
+- Quản lý Git/GitHub và tiến độ nhóm. 
+
 
 <!-- About the Project -->
 ## :star2: About the Project
@@ -78,7 +88,7 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://postimg.cc/06dpnX9V" alt="screenshot" />
+  <img src="[![Screenshot-2026-07-29-134032.png](https://i.postimg.cc/vmC3QCkw/Screenshot-2026-07-29-134032.png)](https://postimg.cc/06dpnX9V)" />
 </div>
 
 <!-- Getting Started -->
